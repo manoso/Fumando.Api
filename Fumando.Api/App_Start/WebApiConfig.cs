@@ -30,9 +30,8 @@ namespace Fumando.Api
 
         private static void ConfigAutofac(HttpConfiguration config)
         {
-
             var configurationBuilder = new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(HttpRuntime.AppDomainAppPath, "config"))
+                .SetBasePath(HttpRuntime.AppDomainAppPath)
                 .AddJsonFile("appSettings.json", false, true);
 
             var root = configurationBuilder.Build();
@@ -42,7 +41,7 @@ namespace Fumando.Api
 
             RegisterConfig(builder, root);
 
-            builder.RegisterControllers(typeof(WebApiApplication).Assembly);
+            builder.RegisterApiControllers(typeof(WebApiApplication).Assembly);
             builder.RegisterModule<AutofacWebTypesModule>();
 
             var container = builder.Build();
@@ -53,7 +52,7 @@ namespace Fumando.Api
         private static void RegisterConfig(ContainerBuilder builder, IConfigurationRoot root)
         {
             builder.RegisterConfig<ApiConfig>(root.GetSection("ApiConfig"));
-            //builder.RegisterConfig<FeedOptions>(configuration.GetSection("feed"));
+            builder.RegisterConfig<LogConfig>(root.GetSection("ApiConfig:Log"));
 
         }
     }

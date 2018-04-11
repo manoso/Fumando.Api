@@ -1,8 +1,7 @@
 namespace Fumando.Model.Config
 {
-    public class SiteConfig
+    public class LogConfig
     {
         public string Name { get; set; }
-        public DatabaseConfig Database { get; set; }
     }
 }

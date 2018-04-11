@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Config\ApiConfig.cs" />
     <Compile Include="Config\DatabaseConfig.cs" />
+    <Compile Include="Config\LogConfig.cs" />
     <Compile Include="Config\SiteConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

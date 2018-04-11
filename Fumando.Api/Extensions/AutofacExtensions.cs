@@ -16,6 +16,10 @@ namespace Fumando.Api.Extensions
             builder.RegisterGeneric(typeof(OptionsMonitor<>))
                 .As(typeof(IOptionsMonitor<>))
                 .SingleInstance();
+
+            builder.RegisterGeneric(typeof(OptionsFactory<>))
+                .As(typeof(IOptionsFactory<>))
+                .SingleInstance();
         }
 
         public static void Configure<TOptions>(this ContainerBuilder builder, Action<TOptions> configureOptions)
