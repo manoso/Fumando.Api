@@ -1,7 +1,10 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
+using Fumando.Api.Models;
 using Fumando.Model.Config;
 using Microsoft.Extensions.Options;
+using u2.Core.Contract;
+using u2.Umbraco.Contract;
 
 namespace Fumando.Api.Controllers
 {
@@ -9,12 +12,14 @@ namespace Fumando.Api.Controllers
     public class ConfigController : ApiController
     {
         private readonly ApiConfig _config;
-        private readonly LogConfig _logConfig;
+        private readonly IUmbracoConfig _umbracoConfig;
+        private readonly ICacheConfig _cacheConfig;
 
-        public ConfigController(IOptions<ApiConfig> config, IOptions<LogConfig> log)
+        public ConfigController(IOptions<ApiConfig> config, IOptions<UmbracoConfig> umbraco, IOptions<CacheConfig> cache)
         {
             _config = config.Value;
-            _logConfig = log.Value;
+            _umbracoConfig = umbraco.Value;
+            _cacheConfig = cache.Value;
         }
 
         // GET api/config
@@ -23,12 +28,20 @@ namespace Fumando.Api.Controllers
             return await Task.FromResult(Json(_config));
         }
 
-        // GET api/config
-        [Route("log")]
+        // GET api/config/umbraco
+        [Route("umbraco")]
         [HttpGet]
-        public async Task<IHttpActionResult> Log()
+        public async Task<IHttpActionResult> Umbraco()
         {
-            return await Task.FromResult(Json(_logConfig));
+            return await Task.FromResult(Json(_umbracoConfig));
+        }
+
+        // GET api/config/umbraco
+        [Route("cache")]
+        [HttpGet]
+        public async Task<IHttpActionResult> Cache()
+        {
+            return await Task.FromResult(Json(_cacheConfig));
         }
     }
 }

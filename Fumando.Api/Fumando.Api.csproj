@@ -177,14 +177,11 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="u2.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\u2.Core.1.1.0\lib\net47\u2.Core.dll</HintPath>
+    <Reference Include="u2.Core, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\u2.Core.1.1.1\lib\net47\u2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="u2.Fixture, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\u2.Fixture.1.1.0\lib\net47\u2.Fixture.dll</HintPath>
-    </Reference>
-    <Reference Include="u2.Umbraco, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\u2.Umbraco.1.1.0\lib\net47\u2.Umbraco.dll</HintPath>
+    <Reference Include="u2.Umbraco, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\u2.Umbraco.1.1.1\lib\net47\u2.Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -227,6 +224,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CacheBuild.cs" />
+    <Compile Include="Models\CacheConfig.cs" />
+    <Compile Include="Models\MapBuild.cs" />
+    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\UmbracoConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -246,10 +248,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appSettings.json" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\ExamineIndex.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

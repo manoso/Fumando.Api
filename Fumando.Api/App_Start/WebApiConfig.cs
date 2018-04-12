@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using Fumando.Api.Extensions;
+using Fumando.Api.Models;
 using Fumando.Model.Config;
 using Microsoft.Extensions.Configuration;
 
@@ -53,6 +54,8 @@ namespace Fumando.Api
         {
             builder.RegisterConfig<ApiConfig>(root.GetSection("ApiConfig"));
             builder.RegisterConfig<LogConfig>(root.GetSection("ApiConfig:Log"));
+            builder.RegisterConfig<UmbracoConfig>(root.GetSection("ApiConfig:Umbraco"));
+            builder.RegisterConfig<CacheConfig>(root.GetSection("ApiConfig:Cache"));
 
         }
     }
