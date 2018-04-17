@@ -149,10 +149,18 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="u2.Core, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\u2.Core.1.1.2\lib\net47\u2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="u2.Umbraco, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\u2.Umbraco.1.1.2\lib\net47\u2.Umbraco.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="U2\CacheBuild.cs" />
+    <Compile Include="U2\MapBuild.cs" />
+    <Compile Include="U2\Site.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

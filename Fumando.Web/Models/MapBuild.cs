@@ -1,6 +1,6 @@
 ﻿using u2.Core.Contract;
 
-namespace Fumando.Api.Models
+namespace Fumando.Web.Models
 {
     public class MapBuild : IMapBuild
     {

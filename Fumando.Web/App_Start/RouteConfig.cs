@@ -9,11 +9,11 @@ namespace Fumando.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "Default",
-                "{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    "Default",
+            //    "{controller}/{action}/{id}",
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

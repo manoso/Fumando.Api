@@ -1,12 +1,12 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
-using Fumando.Api.Models;
+using Fumando.Web.Models;
 using Fumando.Model.Config;
 using Microsoft.Extensions.Options;
 using u2.Core.Contract;
 using u2.Umbraco.Contract;
 
-namespace Fumando.Api.Controllers
+namespace Fumando.Web.Controllers
 {
     [RoutePrefix("api/config")]
     public class ConfigController : ApiController
