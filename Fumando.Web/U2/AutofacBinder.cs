@@ -1,6 +1,6 @@
 using System;
 using Autofac;
-using Fumando.Web.Models;
+using Fumando.Core.U2;
 using u2.Core;
 
 namespace Fumando.Web.U2

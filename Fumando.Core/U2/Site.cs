@@ -6,7 +6,7 @@ namespace Fumando.Core.U2
 {
     public class Site : CmsModel, ISite
     {
-        public string SiteName { get; set; }
+        public string SiteId { get; set; }
         public IEnumerable<string> Hosts { get; set; }
     }
 }

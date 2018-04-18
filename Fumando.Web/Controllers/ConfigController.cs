@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Http;
-using Fumando.Web.Models;
+using Fumando.Core.U2;
 using Fumando.Model.Config;
 using Microsoft.Extensions.Options;
 using u2.Core.Contract;
@@ -25,6 +25,7 @@ namespace Fumando.Web.Controllers
         }
 
         // GET api/config
+        [HttpGet]
         public async Task<IHttpActionResult> Get()
         {
             return await Task.FromResult(Json(_config));
